@@ -74,7 +74,7 @@ Selamat Datang di Toko SoPASTI, Silahkan berbelanja Guys!
 <div class="row">
 <div class="col col-md-6" style="text-align:left"> Welcome(<?= $dataAPI->namalengkap ?>) </div>
 <div class="col col-md-4"><a href="keranjang.php" class="btn btn-info btn-sm">  <img src="../Assets/cart.svg"> (<?= $CountBarang  ?>)</a></div>
-<div class="col col-md-2 text-center"><a href="proses_logout.php" class="btn btn-danger">Keluar</a></div>
+<div class="col col-md-2 text-center"><a onclick="return confirm('Are you Sure to Logout?')" href="proses_logout.php" class="btn btn-danger">Keluar</a></div>
 </div>
 <table class="table table-striped" border="0">
         <thead>

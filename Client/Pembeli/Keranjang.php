@@ -141,7 +141,7 @@ if($CountBarang > 0){
 <?php endif; endforeach; } elseif ($CountBarang == 0){ ?>
     <tbody>
         <tr scope="row">
-    <td><div class="col col-md-12">Data Belanjaan Belum ada</td>
+    <td><div class="col col-md-12">Data Belanjaan Belum ada </div></td>
     </tr>
         </tbody>
     <?php }; ?>
@@ -152,8 +152,17 @@ if($CountBarang > 0){
     <div class="col col-md-3"><b>Total : </b></div>
     <div class="col col-md-4"><b><?= $TotalHarga; ?></b></div>
     </div>
-<div class="col col-md-2"><a href="soap_client2.php" class="btn btn-primary">Kembali</a></div>
-</div>
+    <div class="row">
+      <div class="col col-md-2" style="margin-left:50rem">
+        <a onclick="return confirm('Are you Sure!')" href="proses_clear.php?id=<?= $curId ?>" class="btn btn-warning">Kosongkan Belanjaan</a>
+      </div>
+      <div class="col col-md-3">
+        <a onclick="alert('Coming Soon!')" href="javascript:void(0)" class="btn btn-info">Proses Belanjaan</a>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col col-md-2"><a href="soap_client2.php" class="btn btn-primary">Kembali</a></div>
+  </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 </html>

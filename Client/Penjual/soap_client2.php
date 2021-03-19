@@ -53,7 +53,7 @@ Selamat Datang di Toko SoPASTI, Silahkan berbelanja Guys!
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalAdded">Tambah Product</button>
 </div>
 <div class="col col-md-2">
-<a href="proses_logout.php" class="btn btn-danger">Keluar </a>
+<a href="proses_logout.php" onclick="return confirm('Are you sure?')" class="btn btn-danger">Keluar </a>
 </div>
 </div>
 <table class="table table-striped" border="0">
@@ -75,8 +75,8 @@ Selamat Datang di Toko SoPASTI, Silahkan berbelanja Guys!
             <td><?=$data[0]->harga;?></td>
             <td><?=$data[0]->jumlahProduk;?></td>
             <td><?=$data[0]->deskripsi;?></td>
-            <td style="padding-left:20px;"> <a href="detail_product.php?&id=<?= $data[0]->idProduk ?>" class="btn btn-secondary btn-sm"> Detail </a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a  href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalUpdate<?= $data[0]->idProduk ?>" class="btn btn-sm btn-warning"> Update </a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <td style="padding-left:20px;"> <a href="detail_product.php?&id=<?= $data[0]->idProduk ?>" class="btn btn-secondary btn-sm"> Detail </a>|
+            <a  href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModalUpdate<?= $data[0]->idProduk ?>" class="btn btn-sm btn-warning"> Update </a>|
             <a href="proses_delete.php?id=<?=$data[0]->idProduk?>" onclick="return confirm('Are you sure?');" class="btn btn-sm btn-danger"> Hapus </a> </td>
         </tr>
         </tbody>
@@ -147,22 +147,22 @@ Selamat Datang di Toko SoPASTI, Silahkan berbelanja Guys!
 <form action="proses_tambah.php" method="POST">
 <div class="mb-3">
     <label for="NamaProduk" class="form-label">Nama Produk</label>
-    <input type="text" name="namaProduk" class="form-control" placeholder="isi Nama Produk">
+    <input type="text" required name="namaProduk" class="form-control" placeholder="isi Nama Produk">
   </div>
   <div class="mb-3">
     <label for="hargaProduk" class="form-label">Harga Produk</label>
-    <input type="number" class="form-control" name="harga" placeholder="isi Harga Produk">
+    <input type="number" required class="form-control" name="harga" placeholder="isi Harga Produk">
   </div>
   <div class="mb-3">
     <label for="hargaProduk" class="form-label">Jumlah Produk</label>
-    <input type="number" class="form-control" name="jumlahProduk" placeholder="isi Jumlah Produk">
+    <input type="number" required class="form-control" name="jumlahProduk" placeholder="isi Jumlah Produk">
   </div>
   <div class="mb-3">
     <label for="hargaProduk" class="form-label">Deskripsi Produk</label>
-    <input type="text" class="form-control" name="deskripsi" placeholder="isi Deskripsi Produk">
+    <input type="text" required class="form-control" name="deskripsi" placeholder="isi Deskripsi Produk">
   </div>
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <input type="checkbox" required class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
